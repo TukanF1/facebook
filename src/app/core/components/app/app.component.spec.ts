@@ -1,31 +1,42 @@
-import { TestBed, async } from '@angular/core/testing';
-import { AppComponent } from './app.component';
+import {TestBed, async} from '@angular/core/testing';
+import {AppComponent} from './app.component';
+import {MenuComponent} from '../menu/menu.component';
+import {RouterTestingModule} from '@angular/router/testing';
 
 describe('AppComponent', () => {
+  let fixture = null;
+  let app = null;
+  let compiled = null;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        MenuComponent
       ],
+      imports: [
+        RouterTestingModule
+      ]
     }).compileComponents();
+
+    fixture = TestBed.createComponent(AppComponent);
+    app = fixture.debugElement.componentInstance;
+    compiled = fixture.nativeElement;
   }));
+  afterEach(() => {
+    compiled.remove();
+  });
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   });
 
   it(`should have as title 'facebook'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('facebook');
   });
 
   it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('facebook app is running!');
+    expect(compiled.querySelector('h1').textContent).toContain('Facebook');
   });
 });
