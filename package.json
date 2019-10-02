@@ -9,8 +9,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e --port 4201",
     "protractor": "protractor e2e/protractor.conf.js",
-    "predeploy": "ng build --base-hraf=/2019-10-02-workshop-angular-facebook/",
-    "deploy": "gh-pages -d dist/facebook",
+    "predeploy": "ng build --base-href=/2019-10-02-workshop-angular-facebook/",
+    "deploy": "cross-env NODE_DEBUG=gh-pages gh-pages -d dist/facebook",
     "postdeploy": "echo 'Udało się!"
   },
   "private": true,
