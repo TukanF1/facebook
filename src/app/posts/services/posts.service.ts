@@ -1,6 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {IPostList} from '../../shared/interfaces/post-list.interface';
+import {sortByOperator} from '../../shared/helpers/sorter.helper';
+import {map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -14,11 +16,11 @@ export class PostsService {
 
   async getPosts() {
     const url = 'assets/fake-posts.json';
-    const response = await this.http.get<IPostList>(url).toPromise();
     // const copyResponse = response.slice();
-    const copyResponse = [...response];
-    return copyResponse.sort((a, b) => {
-      return new Date(a.createdTime) > new Date(b.createdTime) ? -1 : 1;
-    });
+    return await this.http.get<IPostList>(url)
+      .pipe(
+        sortByOperator('createdTime')
+      )
+      .toPromise();
   }
 }
