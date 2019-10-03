@@ -9,7 +9,7 @@ import fakePosts from '../../../../fakes/fake-posts';
 })
 export class PostListComponent implements OnInit {
 
-  posts = fakePosts;
+  @Input() posts = null;
 
   constructor() {
   }

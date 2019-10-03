@@ -5,6 +5,7 @@ import {PostListComponent} from '../../../posts/components/post-list/post-list.c
 import {RouterTestingModule} from '@angular/router/testing';
 import {SharedModule} from '../../../shared/shared.module';
 import {PostListItemComponent} from '../../../posts/components/post-list-item/post-list-item.component';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 
 describe('HomePageComponent', () => {
   let component: HomePageComponent;
@@ -14,7 +15,7 @@ describe('HomePageComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [HomePageComponent, PostListComponent, PostListItemComponent],
-      imports: [RouterTestingModule, SharedModule]
+      imports: [RouterTestingModule, SharedModule, HttpClientTestingModule]
     })
       .compileComponents();
   }));
