@@ -2,7 +2,6 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {IPostList} from '../../shared/interfaces/post-list.interface';
 import {sortByOperator} from '../../shared/helpers/sorter.helper';
-import {map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
