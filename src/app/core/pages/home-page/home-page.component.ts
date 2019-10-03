@@ -15,7 +15,11 @@ export class HomePageComponent implements OnInit {
   ) {
   }
 
-  async ngOnInit() {
+  ngOnInit() {
+    this.setupPosts();
+  }
+
+  private async setupPosts() {
     this.posts = await this.postsService.getPosts();
   }
 

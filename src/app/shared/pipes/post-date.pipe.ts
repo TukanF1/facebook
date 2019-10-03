@@ -7,7 +7,7 @@ export class PostDatePipe implements PipeTransform {
 
   transform(dateString: string): any {
     const date = new Date(dateString);
-    return dateString && isNaN.call(null, date) && String(date) !== 'Invalid Date' ?
+    return dateString && !isNaN.call(null, date) ?
       date.toLocaleDateString('pl-pl', {
       year: 'numeric',
       month: 'long',
