@@ -16,6 +16,7 @@ export class PostListItemComponent implements OnInit {
 
   getPostUrl() {
     return `/posts/${this.post.id}`;
+    // return this.post ? `/posts/${this.post.id}` : '';
   }
 
 }

@@ -1,17 +1,21 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { HighlightDirective } from './directives/highlight.directive';
+import {HighlightDirective} from './directives/highlight.directive';
+import {PostDatePipe} from './pipes/post-date.pipe';
 
 @NgModule({
   declarations: [
-    HighlightDirective
+    HighlightDirective,
+    PostDatePipe
   ],
   exports: [
-    HighlightDirective
+    HighlightDirective,
+    PostDatePipe
   ],
   imports: [
     CommonModule
   ]
 })
-export class SharedModule { }
+export class SharedModule {
+}
