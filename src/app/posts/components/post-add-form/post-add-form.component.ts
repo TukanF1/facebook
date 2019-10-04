@@ -43,7 +43,7 @@ export class PostAddFormComponent implements OnInit {
     post.author.id = uuid.v4();
     post.author.name = faker.fake('{{name.firstName}} {{name.lastName}}');
     post.author.avatarUrl = 'http://placeskull.com/50/50/126f36';
-    post.images = ['http://placeskull.com/50/50/123f06/12'];
+    post.images.push('http://placeskull.com/50/50/123f06/12');
     console.log(post);
     this.addPost.emit(post);
   }
