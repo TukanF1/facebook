@@ -1,11 +1,10 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {IComment} from '../../../shared/interfaces/comment.interface';
-import {IPost} from '../../../shared/interfaces/post.interface';
-
 @Component({
   selector: 'app-comment-list-item',
   templateUrl: './comment-list-item.component.html',
-  styleUrls: ['./comment-list-item.component.css']
+  styleUrls: ['./comment-list-item.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CommentListItemComponent implements OnInit {
 
