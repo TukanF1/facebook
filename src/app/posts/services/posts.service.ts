@@ -17,7 +17,7 @@ export class PostsService {
 
   async getPosts(): Promise<IPostList> {
     const url = environment.postUrl;
-    return await this.http.get<IPostList>(url)
+    return this.http.get<IPostList>(url)
       .pipe(
         sortByOperator('createdTime')
       )

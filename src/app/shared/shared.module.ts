@@ -3,15 +3,18 @@ import {CommonModule} from '@angular/common';
 
 import {HighlightDirective} from './directives/highlight.directive';
 import {PostDatePipe} from './pipes/post-date.pipe';
+import { ErrorMessageComponent } from './components/error-message/error-message.component';
 
 @NgModule({
   declarations: [
     HighlightDirective,
-    PostDatePipe
+    PostDatePipe,
+    ErrorMessageComponent
   ],
   exports: [
     HighlightDirective,
-    PostDatePipe
+    PostDatePipe,
+    ErrorMessageComponent
   ],
   imports: [
     CommonModule
