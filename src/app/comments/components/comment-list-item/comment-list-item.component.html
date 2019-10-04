@@ -1,5 +1,9 @@
-<div class="media">
-<!--  <img class="mr-3" src="..." alt="Generic placeholder image">-->
+<div class="media my-3">
+  <img
+    [src]="getCommentAuthorAvatarUrl()"
+    class="mr-3"
+    alt=""
+  >
   <div class="media-body">
     <p>{{ comment.body }}</p>
   </div>

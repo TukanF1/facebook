@@ -1,0 +1,22 @@
+<div class="card my-3">
+  <div class="card-body">
+    <form [formGroup]="addPostForm" (ngSubmit)="onSubmit();">
+      <label for="addPostTextArea">
+        Treść posta:
+      </label>
+      <div class="form-group row">
+        <div class="col-9">
+          <textarea id="addPostTextArea" class="form-control"
+                    name="body" placeholder="Napisz post" rows="3"
+                    formControlName="body"
+          ></textarea>
+        </div>
+        <div class="col-2 align-self-center">
+          <button type="submit" class="btn btn-primary">
+            Dodaj
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
