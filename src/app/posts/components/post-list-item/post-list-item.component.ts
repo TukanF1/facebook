@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 
 @Component({
   selector: 'app-post-list-item',
@@ -8,6 +8,8 @@ import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core'
 export class PostListItemComponent implements OnInit, OnChanges {
 
   @Input() post = null;
+
+  @Output() removePost = new EventEmitter();
 
   constructor() { }
 
@@ -23,6 +25,10 @@ export class PostListItemComponent implements OnInit, OnChanges {
   getPostUrl() {
     return `/posts/${this.post.id}`;
     // return this.post ? `/posts/${this.post.id}` : '';
+  }
+
+  onRemoveHandler() {
+    this.removePost.emit(this.post);
   }
 
 }

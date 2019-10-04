@@ -3,10 +3,16 @@
     <div class="col-9">
       <input type="comment" class="form-control"
              name="body" placeholder="Wpisz komentarz"
-             [(ngModel)]="comment.body">
+             #body="ngModel"
+             [(ngModel)]="comment.body"
+             minlength="2" required>
+      <ul *ngIf="body.errors && body.dirty" class="text-danger my-0 t-3">
+        <li *ngIf="body.errors?.required">Aby dodać komentarz wpisz test.</li>
+        <li *ngIf="body.errors?.minlength">Za mało znaków.</li>
+      </ul>
     </div>
     <div class="col-2">
-      <button type="submit" class="btn btn-primary">
+      <button type="submit" class="btn btn-primary" [disabled]="addForm.invalid">
         Dodaj
       </button>
     </div>

@@ -9,13 +9,20 @@
           <textarea id="addPostTextArea" class="form-control"
                     name="body" placeholder="Napisz post" rows="3"
                     formControlName="body"
+                    minlength="2" required
           ></textarea>
         </div>
         <div class="col-2 align-self-center">
-          <button type="submit" class="btn btn-primary">
+          <button type="submit" class="btn btn-primary" [disabled]="body.invalid">
             Dodaj
           </button>
         </div>
+      </div>
+      <div class="text-danger row" *ngIf="body.errors && body.dirty">
+        <ul>
+          <li *ngIf="body.errors.required">Aby dodać post wpisz tekst.</li>
+          <li *ngIf="body.errors.minlength">Za mało znaków.</li>
+        </ul>
       </div>
     </form>
   </div>

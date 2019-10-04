@@ -8,6 +8,10 @@
           <small>{{post.createdTime | postDate }}</small>
         </a>
       </div>
+      <button type="submit" class="close" data-dismiss="alert" aria-label="Close"
+      (click)="onRemoveHandler();">
+        <span aria-hidden="true">&times;</span>
+      </button>
     </div>
     <img [src]="post.images[0]" class="card-img-top"/>
     <div class="card-body">
