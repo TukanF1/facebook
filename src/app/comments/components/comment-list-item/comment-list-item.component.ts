@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {IComment} from '../../../shared/interfaces/comment.interface';
 
 @Component({
@@ -10,6 +10,8 @@ export class CommentListItemComponent implements OnInit {
 
   @Input() comment: IComment = null;
 
+  @Output() removeComment = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
@@ -20,6 +22,10 @@ export class CommentListItemComponent implements OnInit {
       return this.comment.author.avatarUrl;
     }
     return 'http://placeskull.com/50/50/e34f12';
+  }
+
+  onRemoveHandler() {
+    this.removeComment.emit(this.comment);
   }
 
 }

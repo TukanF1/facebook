@@ -1,4 +1,4 @@
-import {IPost} from './post.interface';
+import {IComment} from './comment.interface';
 
-export interface ICommentList extends Array<IPost> {
+export interface ICommentList extends Array<IComment> {
 }

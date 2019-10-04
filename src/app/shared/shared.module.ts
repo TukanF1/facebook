@@ -5,13 +5,15 @@ import {HighlightDirective} from './directives/highlight.directive';
 import {PostDatePipe} from './pipes/post-date.pipe';
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
 import { LoadingComponent } from './components/loading/loading.component';
+import { PopupComponent } from './components/popup/popup.component';
 
 @NgModule({
   declarations: [
     HighlightDirective,
     PostDatePipe,
     ErrorMessageComponent,
-    LoadingComponent
+    LoadingComponent,
+    PopupComponent
   ],
   exports: [
     HighlightDirective,

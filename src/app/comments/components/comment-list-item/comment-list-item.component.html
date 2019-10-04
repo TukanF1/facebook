@@ -7,4 +7,8 @@
   <div class="media-body">
     <p>{{ comment.body }}</p>
   </div>
+  <button type="submit" class="close" data-dismiss="alert" aria-label="Close"
+          (click)="onRemoveHandler();">
+    <span aria-hidden="true">&times;</span>
+  </button>
 </div>
