@@ -46,6 +46,7 @@ export class PostAddFormComponent implements OnInit {
     post.images.push('http://placeskull.com/50/50/123f06/12');
     console.log(post);
     this.addPost.emit(post);
+    this.addPostForm.reset();
   }
 
 }

@@ -6,4 +6,5 @@ export interface IPost {
   author: IAuthor;
   body: string;
   images: string[];
+  comments: [];
 }

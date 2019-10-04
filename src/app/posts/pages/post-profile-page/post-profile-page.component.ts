@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {PostsService} from '../../services/posts.service';
 import {IPost} from '../../../shared/interfaces/post.interface';
 import {ActivatedRoute, Router} from '@angular/router';
+import {ICommentList} from '../../../shared/interfaces/comment-list.interface';
 
 @Component({
   selector: 'app-post-profile-page',
@@ -11,6 +12,8 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class PostProfilePageComponent implements OnInit {
 
   post: IPost = null;
+
+  @Input() comments: ICommentList = null;
 
   constructor(
     private route: ActivatedRoute,

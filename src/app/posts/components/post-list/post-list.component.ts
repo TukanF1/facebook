@@ -1,7 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 
-import fakePosts from '../../../../fakes/fake-posts';
-
 @Component({
   selector: 'app-post-list',
   templateUrl: './post-list.component.html',

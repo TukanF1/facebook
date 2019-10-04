@@ -2,6 +2,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {IComment} from '../../../shared/interfaces/comment.interface';
 import uuid from 'uuid';
 import faker from 'faker';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-comment-add-form',
@@ -28,7 +29,7 @@ export class CommentAddFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit() {
+  onSubmit(addForm: NgForm) {
     console.log('HALO', this.comment);
     const comment = Object.assign({}, this.comment);
     comment.id = uuid.v4();
@@ -37,6 +38,7 @@ export class CommentAddFormComponent implements OnInit {
     comment.author.name = faker.fake('{{name.firstName}} {{name.lastName}}');
     comment.author.avatarUrl = 'http://placeskull.com/50/50/3d6f36';
     this.addComment.emit(comment);
+    addForm.reset();
   }
 
 }
