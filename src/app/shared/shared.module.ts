@@ -19,7 +19,8 @@ import { PopupComponent } from './components/popup/popup.component';
     HighlightDirective,
     PostDatePipe,
     ErrorMessageComponent,
-    LoadingComponent
+    LoadingComponent,
+    PopupComponent
   ],
   imports: [
     CommonModule

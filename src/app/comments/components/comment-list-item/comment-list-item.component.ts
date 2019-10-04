@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {IComment} from '../../../shared/interfaces/comment.interface';
+import {IPost} from '../../../shared/interfaces/post.interface';
 
 @Component({
   selector: 'app-comment-list-item',

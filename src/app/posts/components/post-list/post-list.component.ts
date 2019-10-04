@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {IPost} from '../../../shared/interfaces/post.interface';
 import {IPostList} from '../../../shared/interfaces/post-list.interface';
 
@@ -11,6 +11,8 @@ export class PostListComponent implements OnInit {
 
   @Input() posts: IPostList = null;
 
+  @ViewChild('dialog', {static: true}) dialog = null;
+
   constructor() {
   }
 
@@ -21,8 +23,18 @@ export class PostListComponent implements OnInit {
     this.posts.unshift(post);
   }
 
-  removePost(post: IPost) {
-    const index = this.posts.indexOf(post);
+  removePostWithConfirmation(post: IPost) {
+    this.dialog.show();
+    this.dialog.__postToRemove = post;
+  }
+
+  removePostWithCloseConfirmation() {
+    this.removePost();
+    this.dialog.hide();
+  }
+
+  private removePost() {
+    const index = this.posts.indexOf(this.dialog.__postToRemove);
     if (index > -1) {
       this.posts.splice(index, 1);
     }
